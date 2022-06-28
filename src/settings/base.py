@@ -19,9 +19,10 @@ USE_TZ = True
 
 
 INSTALLED_APPS = [
-    'src.django_stisla',
-    'widget_tweaks',
-    "django.contrib.admin",
+    # 'src.produto.adminpanel.AdminConfig',
+    # 'src.django_stisla',
+    # 'widget_tweaks',
+    # "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -29,11 +30,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # LIBS
-    'nested_admin',
+    # 'nested_admin',
     # 'rest_framework',
     # 'rest_framework.authtoken',
     # 'drf_yasg',
-
+    # 'core',
     'src.produto',
 ]
 
@@ -52,6 +53,11 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
+]
+
+STATICFILES_FINDERS =[
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
 MIDDLEWARE = [

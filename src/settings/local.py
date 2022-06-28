@@ -16,7 +16,8 @@ from .base import (
     AUTH_PASSWORD_VALIDATORS,
     MIDDLEWARE,
     TEMPLATES,
-    DEFAULT_AUTO_FIELD
+    DEFAULT_AUTO_FIELD,
+    BASE_DIR
 )
 
 ALLOWED_HOSTS = [
@@ -26,10 +27,7 @@ ALLOWED_HOSTS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DBNAME'),
-        'USER': config('DBUSER'),
-        'PASSWORD': config('DBPASSWORD'),
-        'HOST': config('DBHOST')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
