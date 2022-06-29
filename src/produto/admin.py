@@ -28,7 +28,7 @@ class SubcategoriaAdmin(admin.ModelAdmin):
 
 class NotaItensInline(admin.StackedInline):
     model = NotaItens
-    readonly_fields = ('topico',)
+    readonly_fields = ('topico', 'valor_calculado')
     extra = 0
     max_num = 0
 

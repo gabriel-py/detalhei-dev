@@ -19,3 +19,21 @@ class Nota(models.Model):
 
     def __str__(self):
         return f'{self.titulo}'
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+@receiver(post_save, sender=Nota)
+def update_ranking(sender, instance, created, **Kwargs):
+    category_products = instance.produto.categoria.produtos.all()
+
+    for product in category_products:
+        product_item = product.produto_itens.first()
+        scores = product_item.notas.all()
+        
+        for score in scores:
+            from src.produto.models import Topico
+            topico = Topico.objects.filter(id=score.topico_id).first()
+            peso = float(topico.peso)
+            score.valor_calculado = float(score.valor) * peso
+            score.save()

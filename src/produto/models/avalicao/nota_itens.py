@@ -20,6 +20,7 @@ class NotaItens(models.Model):
     )
     
     valor = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)  # noqa E501
+    valor_calculado = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
 
     class Meta:
         ordering = ('pk',)
@@ -28,3 +29,10 @@ class NotaItens(models.Model):
 
     def __str__(self):
         return f'{self.pk}'
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+@receiver(post_save, sender=NotaItens)
+def update_ranking(sender, instance, created, **Kwargs):
+    pass
