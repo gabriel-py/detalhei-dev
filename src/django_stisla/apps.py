@@ -2,7 +2,7 @@ from django.apps import AppConfig
 from django.core.exceptions import ImproperlyConfigured
 
 class admin(AppConfig):
-    name = 'src.django_stisla'
+    name = 'django_stisla'
 
     def ready(self):
         from django.conf import settings
