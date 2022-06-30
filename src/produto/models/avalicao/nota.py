@@ -32,7 +32,7 @@ def update_ranking(sender, instance, created, **Kwargs):
         scores = product_item.notas.all()
         
         for score in scores:
-            from src.produto.models import Topico
+            from produto.models import Topico
             topico = Topico.objects.filter(id=score.topico_id).first()
             peso = float(topico.peso)
             score.valor_calculado = float(score.valor) * peso
