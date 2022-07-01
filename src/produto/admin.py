@@ -1,5 +1,6 @@
+# from src.django_stisla import admin as stisla
 from django.contrib import admin
-from django_stisla.admin import site
+from src.django_stisla.admin import site
 from .models import Produto, Categoria, Subcategoria, Topico, Nota, NotaItens
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
