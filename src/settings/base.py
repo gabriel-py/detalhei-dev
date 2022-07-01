@@ -19,7 +19,7 @@ USE_TZ = True
 
 
 INSTALLED_APPS = [
-    'django_stisla',
+    'src.django_stisla',
     "django.contrib.admin",
     "django.contrib.auth",
     'widget_tweaks',
@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'django.contrib.sites',
 
     # LIBS
     # 'nested_admin',
@@ -35,12 +34,10 @@ INSTALLED_APPS = [
     # 'rest_framework.authtoken',
     # 'drf_yasg',
     # 'core',
-    'produto',
-    'detalhei',
-    'blog'
+    'src.produto'
 ]
 
-ROOT_URLCONF = "core.urls"
+ROOT_URLCONF = "src.urls"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -85,5 +82,5 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "core.wsgi.application"
+WSGI_APPLICATION = "src.wsgi.application"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

@@ -33,7 +33,7 @@ def update_ranking(sender, instance, created, **Kwargs):
         scores = product_item.notas.all()
         
         for score in scores:
-            from produto.models import Topico
+            from src.produto.models import Topico
             topico = Topico.objects.filter(id=score.topico_id).first()
 
             try:
