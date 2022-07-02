@@ -1,11 +1,8 @@
+from .area import Area
+
 from .categoria import Categoria
-from .produto import Produto
-from .sub_categoria import Subcategoria
 from .topico import Topico
 
-from .avalicao import (
-    Nota,
-    NotaItens,
-    Sumario,
-    SumarioNormalizacao
-)
+from .produto import Produto
+from .sumario import Sumario
+from .nota import Nota
