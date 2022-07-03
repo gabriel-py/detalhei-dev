@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "4a2cb238-84e1-478f-98f4-b00f10f83e33",
+		"name": "djoser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OBTER google_url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/auth/o/google-oauth2/?redirect_uri=http://localhost:8000/google",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"o",
+						"google-oauth2",
+						""
+					],
+					"query": [
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8000/google"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OBTER facebook_url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/auth/o/facebook/?redirect_uri=http://localhost:8000/google",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"o",
+						"facebook",
+						""
+					],
+					"query": [
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8000/google"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OBTER twitter_url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/auth/o/twitter/?redirect_uri=http://127.0.0.1:8000/complete/twitter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"o",
+						"twitter",
+						""
+					],
+					"query": [
+						{
+							"key": "redirect_uri",
+							"value": "http://127.0.0.1:8000/complete/twitter"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/o/facebook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/auth/o/facebook/?code=AQBdXzNrp-URp0Ttbj8JNBo3R-wtoqkxgVL4JGRSt2RBxXOslMWRuADr4qzW_qxlFCXPVYhXUTH0N23JYuqckqMGsLgx39IEV79S0nMPyhWQjWSsx6H51RSbKKpvwZQ6KNsJWDYUmmhBvlDA-IZxLRsF5Fa-gPdpR2K3EJiI2GrspzqdRaWZmGTVRax-56Qgg0jqMLFkOV52OCe-8inmabpHRGhHdT2zMlCspJqA32HiOjTnzSKfDSxJDVJCBuRrkHYbLCqzt7dOZDTHJU7qYA3z_3Irw_AzrU7DkPSxlIjxTx5zpZ1wICxW8Y70amxLtB3oKt-XB2-H27hpaZq4-jDkvQAK13ZpW_-410b8z6g5yFZZ8qWyp2Mm8tHMiCwsht1uXggqYGrWWWYonEwiXhcYo4JHxskbELzw3-dMy5gmwQ&state=txkCtbfS1JSKGhAH9JFyXc0JFEO0m6ez",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"o",
+						"facebook",
+						""
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "4lET8f7xgPzTSKlwZMSgWPOgLdkeg68o",
+							"disabled": true
+						},
+						{
+							"key": "code",
+							"value": "AQBdXzNrp-URp0Ttbj8JNBo3R-wtoqkxgVL4JGRSt2RBxXOslMWRuADr4qzW_qxlFCXPVYhXUTH0N23JYuqckqMGsLgx39IEV79S0nMPyhWQjWSsx6H51RSbKKpvwZQ6KNsJWDYUmmhBvlDA-IZxLRsF5Fa-gPdpR2K3EJiI2GrspzqdRaWZmGTVRax-56Qgg0jqMLFkOV52OCe-8inmabpHRGhHdT2zMlCspJqA32HiOjTnzSKfDSxJDVJCBuRrkHYbLCqzt7dOZDTHJU7qYA3z_3Irw_AzrU7DkPSxlIjxTx5zpZ1wICxW8Y70amxLtB3oKt-XB2-H27hpaZq4-jDkvQAK13ZpW_-410b8z6g5yFZZ8qWyp2Mm8tHMiCwsht1uXggqYGrWWWYonEwiXhcYo4JHxskbELzw3-dMy5gmwQ"
+						},
+						{
+							"key": "state",
+							"value": "txkCtbfS1JSKGhAH9JFyXc0JFEO0m6ez"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/o/twitter",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AAAAAAAAAAAAAAAAAAAAABC5eQEAAAAAvtZMyGKIpq1Bkaa%2BGINjFEgZmy4%3DOjm6KOhrHdAK7S3UeJK0FBKGZXOKms2hl0FKaecrv87j47lu9V",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/auth/o/twitter/?redirect_state=eWzYuQemYqvvYr99ccKkcl7wKyMkxBSy&oauth_token=1iNPZgAAAAABebkQAAABgcXReX0&auth_verifier=AR4r0VgLDolVvPrb5mNKFyT2LTDBdjOo",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"o",
+						"twitter",
+						""
+					],
+					"query": [
+						{
+							"key": "redirect_state",
+							"value": "eWzYuQemYqvvYr99ccKkcl7wKyMkxBSy"
+						},
+						{
+							"key": "oauth_token",
+							"value": "1iNPZgAAAAABebkQAAABgcXReX0"
+						},
+						{
+							"key": "auth_verifier",
+							"value": "AR4r0VgLDolVvPrb5mNKFyT2LTDBdjOo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/o/google",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/auth/o/google-oauth2/?state=BnAhC1x5oAG3wB5RzUZ0kBLERTP1dQvc&code=4%2F0AX4XfWilYtrsRHOzAhQrm_9JNACsY3zErtA18m-HNuj-NTM8gLa7r7HGcQ5HqgWU8qBnYA%26",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"o",
+						"google-oauth2",
+						""
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "BnAhC1x5oAG3wB5RzUZ0kBLERTP1dQvc"
+						},
+						{
+							"key": "code",
+							"value": "4%2F0AX4XfWilYtrsRHOzAhQrm_9JNACsY3zErtA18m-HNuj-NTM8gLa7r7HGcQ5HqgWU8qBnYA%26"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/me/",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2ODczNzE0LCJqdGkiOiJlOGVhZmExZGZkNjI0MWQ3YjUzNzM5YjdhZWNmMmM0OSIsInVzZXJfaWQiOjJ9.uuug76mXKDzejZecoGff8A7VTmu7stPV923oNDlMglQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/auth/users/me/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"users",
+						"me",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2ODc0NjE5LCJqdGkiOiI4ZTkwMWQ5YzJlNTc0OTI1YTRkMWFkMTI3OTIxMTJiOCIsInVzZXJfaWQiOjN9.NHo8FRb-8N5REkLGKetmZmjtEeLP-_e1iEtLQ7UNIUQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/auth/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"auth",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

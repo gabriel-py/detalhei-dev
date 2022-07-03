@@ -60,6 +60,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 MIDDLEWARE = [
+    'social_django.middleware.SocialAuthExceptionMiddleware',
     # "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -98,18 +99,28 @@ AUTH_USER_MODEL = 'usuarios.UserAccount'
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
     'django.contrib.auth.backends.ModelBackend'
 )
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication'
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework_simplejwt.authentication.JSONWebTokenAuthentication',
     ),
+     'DEFAULT_PERMISSION_CLASSES': (
+         'rest_framework.permissions.IsAuthenticated',
+        ),
 }
 
 SIMPLE_JWT = {
    'AUTH_HEADER_TYPES': ('JWT',),
+#    'AUTH_HEADER_TYPES': ('Baerer',),
+    # 'AUTH_TOKEN_CLASSES': (
+    #     'rest_framework_simplejwt.tokens.AccessToken',
+    # ),
+    # 'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
 }
 
 DJOSER = {
@@ -125,7 +136,11 @@ DJOSER = {
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
-    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google', 'http://localhost:8000/facebook'],
+    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': [
+        'http://localhost:8000/google',
+        'http://localhost:8000/facebook',
+        'http://127.0.0.1:8000/complete/twitter'
+    ],
     'SERIALIZERS': {
         'user_create': 'src.usuarios.serializers.UserCreateSerializer',
         'user': 'src.usuarios.serializers.UserCreateSerializer',
@@ -145,3 +160,16 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = [
     'first_name',
     'last_name'
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '414951983981584'
+SOCIAL_AUTH_FACEBOOK_SECRET = '36c1fbc78eaa638e27d8784fa93ef173'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'email, first_name, last_name'
+}
+
+SOCIAL_AUTH_TWITTER_KEY = 'YoaT5yecJWFTnEbxIZz8d4Plz'
+# SOCIAL_AUTH_TWITTER_KEY = 'WnlVWUgzWVRmUDV0QldLYWpwVzI6MTpjaQ'
+SOCIAL_AUTH_TWITTER_SECRET = 'YI63WvSsLaUBxWw6Xogv46lO8drjXEdeU2D6bccfBtmtKvhUip'
+# SOCIAL_AUTH_TWITTER_SECRET = '40YC34xbh6Vm5p2cM089TbNtD2bhCVji6e1x6CCsDoKhcRREqi'
+BAERER='AAAAAAAAAAAAAAAAAAAAABC5eQEAAAAAvtZMyGKIpq1Bkaa%2BGINjFEgZmy4%3DOjm6KOhrHdAK7S3UeJK0FBKGZXOKms2hl0FKaecrv87j47lu9V'
