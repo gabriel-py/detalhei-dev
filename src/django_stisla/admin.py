@@ -1,8 +1,9 @@
 import datetime
 from django.contrib.auth.models import Group, User
 from django.contrib.auth.admin import GroupAdmin, UserAdmin
-from django.contrib import admin
+# from django.contrib import admin
 from django.contrib.admin import AdminSite
+from src.usuarios.models import UserAccount
 
 # Register your models here.
 
@@ -19,4 +20,5 @@ class StislaAdmin(AdminSite):
 
 site = StislaAdmin()
 site.register(Group, GroupAdmin)
-site.register(User, UserAdmin)
+# site.register(User, UserAdmin)
+site.register(UserAccount, UserAdmin)

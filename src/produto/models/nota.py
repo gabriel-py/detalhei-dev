@@ -12,7 +12,7 @@ class Nota(models.Model):
         'Topico', on_delete=models.CASCADE, related_name='notas'
     )
     nota = models.DecimalField(
-        max_digits=2, decimal_places=1, null=False, blank=False
+        max_digits=2, decimal_places=1, null=False, blank=False, default=0.0
     )
     nota_calculada = models.DecimalField(
         max_digits=3, decimal_places=1, null=True, blank=True
