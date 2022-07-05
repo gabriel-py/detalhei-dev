@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'djoser',
     'social_django',
     'src.usuarios.apps.UsuariosConfig',
-    # 'src.produto.apps.ProdutoConfig'
+    'src.produto.apps.ProdutoConfig'
 ]
 
 ROOT_URLCONF = "src.urls"
